@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 5</title>
+    <style media="screen">
+
+      h2
+      {
+        text-align:center;
+        margin:20px;
+      }
+      p
+      {
+        text-align:left;
+        margin:10px;
+      }
+      body
+      {
+        background:#8db0f2;
+      }
+      #wrapper
+      {
+        background:#FFFFFF;
+        margin: 0 auto;
+        overflow:hidden;
+        width: 850px;
+        border-radius:19px;
+        margin-bottom:300px;
+      }
+      .riemann
+      {
+        padding:10px;
+        font-size:13px;
+        border:1px solid #cccccc;
+        width:65%;
+        background:white;
+        margin:5px;
+      }
+      .guts
+      {
+        width:22%;
+        padding:10px;
+        background:#f2f2f2;
+        color:black;
+        font-size: 14px;
+      }
+
+    </style>
+  </head>
+  <body>
+<table id="wrapper" width="60%">
+  <tr>
+  <td>
+    <output id="textHold">
+<h2>Website Style Editor</h2>
+
+<p>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p><br /><br />
+
+<form>
+    <input class="riemann" id="delta1" type="text" placeholder="Type a color"/>
+    <input class="guts" id="delta2" value="Change color" type="button"/>
+</form>
+<form id="Space" width="100%">
+    <input class="riemann" id="korolev" type="text" placeholder="Type a background-color"/>
+    <input class="guts" id="korol" value="Change background" type="button"/>
+</form>
+<form>
+    <input class="riemann" id="TARS" type="text" placeholder="Type a font family"/>
+    <input class="guts" id="MAT" value="Change Font" type="button"/>
+</form>
+<form>
+    <input class="riemann" id="CASE" type="text" placeholder="Type a font size"/>
+    <input class="guts" id="TOR" value="Change Font Size" type="button"/>
+</form><br />
+
+<form action="#" method="get">
+Heading Size: <input type="range" value="" id="rating" min="0" max="100" onchange="evalSlider();" /><br />
+</output>
+</form>
+</tr>
+</td>
+</table>
+
+
+
+<script type="text/javascript">
+  // JavaScript code
+  var textHolder;
+
+  function changeBackgroundColor() {
+    var backColor = document.getElementById("korolev").value;
+    document.getElementById("wrapper").style.backgroundColor = backColor;
+  }
+  document.getElementById("korol").addEventListener("click", changeBackgroundColor);
+
+  function changeTextColor() {
+    var textColor = document.getElementById("delta1").value;
+    document.body.style.color = textColor;
+  }
+  document.getElementById("delta2").addEventListener("click", changeTextColor);
+
+  function changeFontFamily() {
+    var fontFamil = document.getElementById("TARS").value;
+    document.body.style.fontFamily = fontFamil;
+  }
+  document.getElementById("MAT").addEventListener("click", changeFontFamily);
+
+  function changeFontSize() {
+    var fontSize = document.getElementById("CASE").value;
+    document.body.style.fontSize = fontSize + "px";
+  }
+  document.getElementById("TOR").addEventListener("click", changeFontSize);
+
+  function evalSlider() {
+    textHolder = document.getElementById("rating").value;
+    document.getElementById('textHold').style.fontSize = textHolder + "px";
+  }
+  document.getElementById("rating").addEventListener("change", evalSlider);
+</script>
+
+  </body>
+</html>

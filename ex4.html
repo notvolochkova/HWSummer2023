@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Geometric Series Calculator</title>
+</head>
+<body>
+  <div>
+    <label for="aInput">Enter the value of a (first term):</label>
+    <input type="number" id="aInput" />
+  </div>
+  <div>
+    <label for="rInput">Enter the value of r (common ratio):</label>
+    <input type="number" id="rInput" />
+  </div>
+  <div>
+    <label for="nInput">Enter the value of N (number of terms):</label>
+    <input type="number" id="nInput" />
+  </div>
+  <button onclick="calculateSeries()">Calculate</button>
+  <div id="resultDiv"></div>
+
+  <script>
+    // Function to calculate the sum of a geometric series
+    function geometricSeriesSum(a, r, n) {
+      return a * (1 - Math.pow(r, n)) / (1 - r);
+    }
+
+    function calculateSeries() {
+      const a = parseFloat(document.getElementById("aInput").value);
+      const r = parseFloat(document.getElementById("rInput").value);
+      const N = parseInt(document.getElementById("nInput").value);
+
+      const geometricSum = geometricSeriesSum(a, r, N);
+      const geometricFormula = `Sum of Geometric Series: S = a * (1 - r<sup>N</sup>) / (1 - r)`;
+      const geometricResult = `Sum = ${geometricSum}`;
+
+      // Display the results
+      const resultDiv = document.getElementById("resultDiv");
+      resultDiv.innerHTML = `
+        <h3>Formulas:</h3>
+        <p>${geometricFormula}</p>
+        <h3>Result:</h3>
+        <p>${geometricResult}</p>
+      `;
+      var info = ["Wangdong", new Date("1986-01-20"), "Director of Enterprise Business", 20];
+    }
+    var objectName = {
+        name:lee, 
+        age:29
+    };
+  </script>
+</body>
+</html>
